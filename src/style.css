@@ -1,95 +1,52 @@
-/*
-Pull Request
-[x] Header height is set in 1 place (for the links)
-[x] Content is vertically centered (for any header height)
-[x] CSS is used to show all letters in Uppercase (don't type them in HTML)
-[x] Logo is an image wrapped with a link
-[x] CSS Variable is used for a blue color
-[x] Pseudo-element is used for a blue line below the active link
-[x] Code follows all the Code Style Rules
-[x] The Google Fonts Configuration follows requirements.
-*/
-
-* {
+html,body{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary-color: #00acdc;
-}
-
-body {
   font-family: Roboto, sans-serif;
+  font-optical-sizing: auto;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 100%;
-  letter-spacing: 0;
-  text-transform: uppercase;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
 }
 
-header {
+a{
+  text-decoration: none;
+  color: aqua;
+}
+
+li{
+  list-style: none;
+  margin-right: 20px;
+}
+
+ul{
+  list-style: none;
+}
+
+.header{
+  box-sizing: border-box;
   display: flex;
+  height: 60px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
-  background-color: #fff;
-  width: 100%;
-  height: 60px;
 }
 
-.logo {
+.logo{
   width: 40px;
   height: 40px;
-  display: block;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.nav{
+display: flex;
+justify-content: flex-end;
+align-items: center;
 }
 
-ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+.nav__list{
+display: flex;
+justify-content: flex-end;
+align-items: center;
 }
 
-nav ul li {
-  position: relative;
-}
 
-nav ul li a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-  text-decoration: none;
-  color: #000;
-  position: relative;
-}
-
-nav ul li a:hover {
-  color: var(--primary-color);
-}
-
-ul li a.is-active {
-  color: var(--primary-color);
-}
-
-ul li a.is-active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: var(--primary-color);
-  border-radius: 8px;
-}
-
-a[data-qa='hover']:hover {
-  color: var(--primary-color);
-}
